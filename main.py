@@ -33,10 +33,12 @@ def word_count_map(doc):
       a list of tuples of form (token, 1), where token is a whitespace delimited element of this string.
       
     E.g.
-    >>> word_count_map('i am sam i am')
+    # word_count_map('i am sam i am')
     [('i', 1), ('am', 1), ('sam', 1), ('i', 1), ('am', 1)]
     """
     ###TODO
+
+    return [(word, 1) for word in doc.split()]
     
     
 
@@ -48,12 +50,15 @@ def word_count_reduce(group):
     Returns:
       tuple of form (token, int), where int is the number of times that token appears
     E.g.
-    >>> word_count_reduce(['i', [1,1]])
+    # word_count_reduce(['i', [1,1]])
     ('i', 2)
     
     NOTE: you should use call the `reduce` function here.
     """
     ###TODO
+    return (group[0], reduce(lambda x, y: x+y, group[0], group[1]))
+
+
     
     
 
@@ -80,7 +85,7 @@ def collect(pairs):
     # done. do not change me.
     Implements the collect function (see text Vol II Ch2)
     E.g.:
-    >>> collect([('i', 1), ('am', 1), ('sam', 1), ('i', 1)])
+    collect([('i', 1), ('am', 1), ('sam', 1), ('i', 1)])
     [('am', [1]), ('i', [1, 1]), ('sam', [1])]    
     """
     result = defaultdict(list)
@@ -119,8 +124,19 @@ def sentiment_map(doc,
     Returns:
       a list of tuples of form (positive, 1) or (negative, 1)      
     E.g.
-    >>> sentiment_map('it was a terrible waste of time')
+    sentiment_map('it was a terrible waste of time')
     [('negative', 1), ('negative', 1)]
     """
     ###TODO
+
+    words = doc.split()
+    list = []
+    for word in words:
+            if word in pos_terms:
+                    list.append(("positive", 1))
+            elif word in neg_terms:
+                    list.append(("negative", 1))
+
+    return list
+
 
