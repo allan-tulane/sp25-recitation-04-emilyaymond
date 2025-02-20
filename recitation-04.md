@@ -1,6 +1,6 @@
 # CMPS 2200  Recitation 04
 
-**Name (Team Member 1):**_____Emily Aymond____________________  
+**Name (Team Member 1):**_____Emily Aymond___________________  
 **Name (Team Member 2):**_____Camden Yale____________________
 
 
